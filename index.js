@@ -8,7 +8,7 @@ const socketServer = createSocket();
 let poolOfClients = [];
 
 socketServer.installHandlers(httpServer);
-httpServer.listen(5000);
+httpServer.listen(process.env.PORT);
 
 socketServer.on('connection', connection => {
     poolOfClients = [...poolOfClients, connection];
